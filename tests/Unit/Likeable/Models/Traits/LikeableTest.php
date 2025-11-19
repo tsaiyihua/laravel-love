@@ -620,10 +620,10 @@ class LikeableTest extends TestCase
         $sortedEntities = Entity::orderByLikesCount('desc')->get();
 
         $this->assertSame([
-            $entityD->getKey() => '10',
-            $entityC->getKey() => '5',
-            $entityA->getKey() => '3',
-            $entityB->getKey() => '1',
+            $entityD->getKey() => 10,
+            $entityC->getKey() => 5,
+            $entityA->getKey() => 3,
+            $entityB->getKey() => 1,
         ], $sortedEntities->pluck('count', 'id')->toArray());
     }
 
@@ -652,10 +652,10 @@ class LikeableTest extends TestCase
         $sortedEntities = Entity::orderByLikesCount('asc')->get();
 
         $this->assertSame([
-            $entityB->getKey() => '1',
-            $entityA->getKey() => '3',
-            $entityC->getKey() => '5',
-            $entityD->getKey() => '10',
+            $entityB->getKey() => 1,
+            $entityA->getKey() => 3,
+            $entityC->getKey() => 5,
+            $entityD->getKey() => 10,
         ], $sortedEntities->pluck('count', 'id')->toArray());
     }
 
@@ -677,8 +677,8 @@ class LikeableTest extends TestCase
         $sortedEntities = Entity::orderByLikesCount('desc')->get();
 
         $this->assertSame([
-            $entityD->getKey() => '10',
-            $entityA->getKey() => '3',
+            $entityD->getKey() => 10,
+            $entityA->getKey() => 3,
             $entityB->getKey() => null,
             $entityC->getKey() => null,
         ], $sortedEntities->pluck('count', 'id')->toArray());
@@ -709,10 +709,10 @@ class LikeableTest extends TestCase
         $sortedEntities = Entity::orderByDislikesCount('desc')->get();
 
         $this->assertSame([
-            $entityD->getKey() => '10',
-            $entityC->getKey() => '5',
-            $entityA->getKey() => '3',
-            $entityB->getKey() => '1',
+            $entityD->getKey() => 10,
+            $entityC->getKey() => 5,
+            $entityA->getKey() => 3,
+            $entityB->getKey() => 1,
         ], $sortedEntities->pluck('count', 'id')->toArray());
     }
 
@@ -741,10 +741,10 @@ class LikeableTest extends TestCase
         $sortedEntities = Entity::orderByDislikesCount('asc')->get();
 
         $this->assertSame([
-            $entityB->getKey() => '1',
-            $entityA->getKey() => '3',
-            $entityC->getKey() => '5',
-            $entityD->getKey() => '10',
+            $entityB->getKey() => 1,
+            $entityA->getKey() => 3,
+            $entityC->getKey() => 5,
+            $entityD->getKey() => 10,
         ], $sortedEntities->pluck('count', 'id')->toArray());
     }
 
@@ -766,8 +766,8 @@ class LikeableTest extends TestCase
         $sortedEntities = Entity::orderByDislikesCount('desc')->get();
 
         $this->assertSame([
-            $entityD->getKey() => '10',
-            $entityA->getKey() => '3',
+            $entityD->getKey() => 10,
+            $entityA->getKey() => 3,
             $entityB->getKey() => null,
             $entityC->getKey() => null,
         ], $sortedEntities->pluck('count', 'id')->toArray());
