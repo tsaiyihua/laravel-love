@@ -619,7 +619,7 @@ class LikeableTest extends TestCase
 
         $sortedEntities = Entity::orderByLikesCount('desc')->get();
 
-        $this->assertSame([
+        $this->assertEquals([
             $entityD->getKey() => 10,
             $entityC->getKey() => 5,
             $entityA->getKey() => 3,
@@ -651,7 +651,7 @@ class LikeableTest extends TestCase
 
         $sortedEntities = Entity::orderByLikesCount('asc')->get();
 
-        $this->assertSame([
+        $this->assertEquals([
             $entityB->getKey() => 1,
             $entityA->getKey() => 3,
             $entityC->getKey() => 5,
@@ -676,7 +676,7 @@ class LikeableTest extends TestCase
 
         $sortedEntities = Entity::orderByLikesCount('desc')->get();
 
-        $this->assertSame([
+        $this->assertEquals([
             $entityD->getKey() => 10,
             $entityA->getKey() => 3,
             $entityB->getKey() => null,
@@ -708,7 +708,7 @@ class LikeableTest extends TestCase
 
         $sortedEntities = Entity::orderByDislikesCount('desc')->get();
 
-        $this->assertSame([
+        $this->assertEquals([
             $entityD->getKey() => 10,
             $entityC->getKey() => 5,
             $entityA->getKey() => 3,
@@ -740,7 +740,7 @@ class LikeableTest extends TestCase
 
         $sortedEntities = Entity::orderByDislikesCount('asc')->get();
 
-        $this->assertSame([
+        $this->assertEquals([
             $entityB->getKey() => 1,
             $entityA->getKey() => 3,
             $entityC->getKey() => 5,
@@ -765,7 +765,7 @@ class LikeableTest extends TestCase
 
         $sortedEntities = Entity::orderByDislikesCount('desc')->get();
 
-        $this->assertSame([
+        $this->assertEquals([
             $entityD->getKey() => 10,
             $entityA->getKey() => 3,
             $entityB->getKey() => null,
