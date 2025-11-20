@@ -19,7 +19,6 @@ use Cog\Tests\Laravel\Love\Stubs\Models\User;
 use Illuminate\Database\Eloquent\Relations\Relation;
 use Illuminate\Support\Facades\File;
 use Mockery;
-use Orchestra\Database\ConsoleServiceProvider;
 use Orchestra\Testbench\TestCase as Orchestra;
 
 /**
@@ -69,7 +68,6 @@ abstract class TestCase extends Orchestra
     {
         return [
             LoveServiceProvider::class,
-            ConsoleServiceProvider::class,
         ];
     }
 

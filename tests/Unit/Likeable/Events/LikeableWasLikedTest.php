@@ -16,6 +16,7 @@ namespace Cog\Tests\Laravel\Love\Unit\Likeable\Events;
 use Cog\Laravel\Love\Likeable\Events\LikeableWasLiked;
 use Cog\Tests\Laravel\Love\Stubs\Models\Entity;
 use Cog\Tests\Laravel\Love\TestCase;
+use Illuminate\Support\Facades\Event;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 
 /**
@@ -30,9 +31,11 @@ class LikeableWasLikedTest extends TestCase
     /** @test */
     public function it_can_fire_model_was_liked_event()
     {
-        $this->expectsEvents(LikeableWasLiked::class);
+        Event::fake([LikeableWasLiked::class]);
 
         $entity = factory(Entity::class)->create();
         $entity->likeBy(1);
+
+        Event::assertDispatched(LikeableWasLiked::class);
     }
 }
