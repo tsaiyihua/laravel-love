@@ -35,7 +35,7 @@ trait Likeable
      */
     public static function bootLikeable()
     {
-        static::observe(LikeableObserver::class);
+        static::deleted(LikeableObserver::class . '@deleted');
     }
 
     /**
